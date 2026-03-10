@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import "tailwindcss";
+nav {
+  background-color: rgb(240, 240, 240);
+  top: 20px;
+  transition: 0.5s ease;
+  /* list-style: none; */
+}
+
+body {
+  font-family: "DM Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  overflow: scroll;
+  position: relative;
+}
+
+.hamburger {
+  transition: 0.4s ease-in-out;
+}
