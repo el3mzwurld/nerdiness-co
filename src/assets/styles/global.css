@@ -16,4 +16,5 @@ body {
 
 .hamburger {
   transition: 0.4s ease-in-out;
+  /* background: #7b0041; */
 }

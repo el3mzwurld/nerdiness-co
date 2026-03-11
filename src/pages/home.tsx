@@ -4,12 +4,16 @@ import body_img from "../assets/images/body-2.png";
 import frontEnd from "../assets/images/frontdev.webp";
 import backEnd from "../assets/images/backend.webp";
 import production from "../assets/images/production.webp";
+import careers from "../assets/images/careers.png";
+import logo from "../assets/images/nav_logo.png";
 import hero from "../assets/images/hero-img.png";
 import productCta from "../assets/images/cta-products.png";
 import finCta from "../assets/images/financials-cta.png";
 
 import { motion, AnimatePresence, easeInOut } from "motion/react";
-
+import { FaMediumM, FaLinkedinIn, FaMedium } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 const Home = () => {
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
   const Services = [
@@ -35,7 +39,7 @@ const Home = () => {
         <NavBar links={Links} />
       </header>
 
-      <main className="w-full min-h-screen flex-col bg-[#FFF6FB] flex gap-5">
+      <main className="w-full min-h-screen flex-col bg-[#FFF6FB] flex gap-5 ">
         <section className="hero w-full h-[100vh] bg-[#50052D] pt-[70px] relative z-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
@@ -55,12 +59,12 @@ const Home = () => {
             />
 
             <motion.div
-              initial={{ opacity: 0.1, y: -10 }}
+              initial={{ opacity: 0.1, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, ease: "easeIn" }}
               className="txt w-[80%] h-auto flex flex-col gap-5"
             >
-              <p className="title text-[25px] text-white font-semibold text-center">
+              <p className="title max-[390px]:text-[30px] text-[40px] w-full text-white font-semibold text-center">
                 TECHNOLOGICALLY TRANSFORMING LIVES
               </p>
               <p className="text-[14px] text-center text-white px-5 font-light leading-7">
@@ -102,7 +106,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8 }}
-              className="bg-[#7B0041] px-[20px] py-[5px] text-[12px] text-white rounded-[5px]"
+              className="bg-[#7B0041] px-8 py-3 text-[12px] text-white rounded-[5px]"
             >
               Read More
             </motion.button>
@@ -187,7 +191,38 @@ const Home = () => {
             />
           ))}
         </section>
+        <section className="careers w-full h-[500px] py-5 flex flex-col gap-5 relative z-0">
+          <div className="cover absolute z-1 h-full w-full bg-[#7b004252]"></div>
+          <img
+            src={careers}
+            className="absolute w-auto h-full object-cover object-center -z-2"
+            alt=""
+          />
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+            className="txt w-full h-full bg-transparent selection:bg-none flex flex-col items-center justify-evenly z-1 py-2.5"
+          >
+            <h2 className="text-[25px] text-white">Careers</h2>
+            <p className="text-[16px] text-white text-center px-5">
+              We are looking for team members who don’t only define themselves
+              based on their skill and experience. We want to know what really
+              motivates and drives you in life. So, how does Nerdiness fit into
+              that journey? We want to get to know you
+            </p>
+            <button className="text-[16px] text-[#7b0041] text-center px-6 py-2.5 bg-white rounded-md">
+              Join Us
+            </button>
+          </motion.div>
+        </section>
+        <Contact />
       </main>
+
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
@@ -240,4 +275,120 @@ const CtaSection = ({ title, body, image }: CtaSectionProps) => {
   );
 };
 
+export const Contact = () => {
+  return (
+    <div className="contact-us w-full h-90vh py-5 ">
+      <div className="illustration max-md:hidden"></div>
+      <div className="form-container max-sm:h-full max-sm:w-full flex flex-col items-start justify-center">
+        <div className="title flex flex-col items-start m-3">
+          <p className="font-bold text-[30px]">Get In Touch</p>
+          <p className="font-medium text-[16px] w-full mt-2.5">
+            Comments? Enquiries? Ideas? Or just to say Hi.... <br />
+            We're always here.
+          </p>
+        </div>
+        <motion.form
+          action=""
+          className="flex flex-col w-full px-2.5 items-start"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
+            <label htmlFor="" className="text-[14px]">
+              Full name
+            </label>
+            <input className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none"></input>
+          </div>
+          <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
+            <label htmlFor="" className="text-[14px]">
+              Email
+            </label>
+            <input
+              type="email"
+              className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none"
+            ></input>
+          </div>
+          <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
+            <label htmlFor="" className="text-[14px]">
+              Email
+            </label>
+            <textarea className="h-25 w-full border-[1.5px] px-2.5 py-2.5 focus:outline-none"></textarea>
+          </div>
+          <button className="px-15 mt-5 py-2.5 rounded-md text-white font-bold bg-pink-800">
+            Send
+          </button>
+        </motion.form>
+      </div>
+    </div>
+  );
+};
+
+export const Footer = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return window.removeEventListener("resize", handleResize);
+  }, []);
+  return (
+    <div className="footer w-full h-auto py-5 bg-[#7b0041]">
+      <div className="logo max-sm:h-[350px] flex flex-col px-3.5 pt-3.5">
+        <div className="main w-20.75 h-20.75">
+          <img src={logo} className="bg-white p-2.5 rounded-md" alt="" />
+        </div>
+        <p className="w-full h-auto leading-7.5 text-[14px] text-white font-light my-3.5">
+          The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax
+          quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick
+          quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs
+          grab quick-jived waltz.
+        </p>
+        <div className="socials flex w-full h-auto py-5 items-center gap-5">
+          <span className="ico">
+            <FaFacebookF size={windowWidth < 620 ? 30 : 35} color="white" />
+          </span>
+          <span className="ico">
+            <FaLinkedinIn size={windowWidth < 620 ? 30 : 35} color="white" />
+          </span>{" "}
+          <span className="ico">
+            <FaMediumM size={windowWidth < 620 ? 30 : 35} color="white" />
+          </span>{" "}
+          <span className="ico">
+            <FaInstagram size={windowWidth < 620 ? 30 : 35} color="white" />
+          </span>{" "}
+          <span className="ico">
+            <FaTwitter size={windowWidth < 620 ? 30 : 35} color="white" />
+          </span>
+        </div>
+      </div>
+      <div className="links flex flex-1 flex-row flex-wrap w-full h-[100%] w-full px-5 py-5.5 items-start justify-between gap-x-5 gap-y-10">
+        <ul className="link-group flex flex-col items-start gap-[10px] text-white text-[14px]">
+          <h2 className="linkG-title text-[20px] text-white">About Us</h2>
+          <li className="link-item">Our History</li>
+          <li className="link-item">Purpose</li>
+          <li className="link-item">The Team</li>
+          <li className="link-item">Careers</li>
+        </ul>
+        <ul className="link-group flex flex-col items-start gap-[10px] text-white text-[14px]">
+          <h2 className="linkG-title text-[20px] text-white">Projects</h2>
+          <li className="link-item">Our Services</li>
+          <li className="link-item">Our Process</li>
+          <li className="link-item">Why work with us?</li>
+          <li className="link-item">Our value proposition</li>
+        </ul>{" "}
+        <ul className="link-group flex flex-col items-start gap-[10px] text-white text-[14px]">
+          <h2 className="linkG-title text-[20px] text-white">About Us</h2>
+          <li className="link-item">Application</li>
+          <li className="link-item">Student login</li>
+          <li className="link-item">Student self service</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 export default Home;
