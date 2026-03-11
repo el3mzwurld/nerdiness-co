@@ -15,6 +15,16 @@ import { FaMediumM, FaLinkedinIn, FaMedium } from "react-icons/fa";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 const Home = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return window.removeEventListener("resize", handleResize);
+  }, []);
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
   const Services = [
     { image: frontEnd, title: "Front-end development Training" },
@@ -33,19 +43,20 @@ const Home = () => {
       image: finCta,
     },
   ];
+
   return (
     <div>
       <header className="w-full h-auto bg-transparent">
-        <NavBar links={Links} />
+        <NavBar links={Links} windowWidth={windowWidth} />
       </header>
 
       <main className="w-full min-h-screen flex-col bg-[#FFF6FB] flex gap-5 ">
-        <section className="hero w-full h-[100vh] bg-[#50052D] pt-[70px] relative z-0 overflow-hidden">
+        <section className="hero w-full h-[100vh] pt-[70px] sm:flex-row-reverse relative z-0 overflow-hidden sm:flex sm:items-center sm:pt-0">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-full h-full flex items-center justify-center"
+            className="relative w-full bg-[#50052D] h-full flex items-center justify-center sm:w-[100%] sm:flex-1"
           >
             <img
               src={vector}
@@ -54,7 +65,7 @@ const Home = () => {
             />
             <img
               src={vector}
-              className="absolute top-[6px] w-[70px] left-2 max-lg:hidden"
+              className="absolute top-[6px] w-[70px] left-2 max-sm:hidden"
               alt=""
             />
 
@@ -75,7 +86,7 @@ const Home = () => {
             </motion.div>
           </motion.div>
 
-          <motion.div className="hidden"></motion.div>
+          <motion.div className="hidden relative bg-white sm:flex sm:w-[45%]"></motion.div>
         </section>
         <section className="body-2 w-full max-md:h-screen flex flex-col items-center justify-center gap-10 px-10 py-2.5">
           <motion.div
@@ -165,13 +176,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ y: 10 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true, amount: 0.8 }}
-            transition={{ duration: 0.3, delay: 0.5 }}
-            className="max-sm:w-full h-auto flex flex-col gap-3.5"
-          >
+          <div className="max-sm:w-full h-auto flex flex-col gap-3.5">
             {Services.map((item, index) => (
               <ServiceBody
                 key={index}
@@ -179,7 +184,7 @@ const Home = () => {
                 service={item.title}
               ></ServiceBody>
             ))}
-          </motion.div>
+          </div>
         </section>
         <section className="ctas w-full h-auto py-5 px-5 flex flex-col gap-5">
           {CtaSections.map((section, index) => (
@@ -201,7 +206,7 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.3, delay: 0.5 }}
             className="txt w-full h-full bg-transparent selection:bg-none flex flex-col items-center justify-evenly z-1 py-2.5"
           >
