@@ -8,9 +8,10 @@ import App from "../App";
 import Home from "../pages/home";
 import SignUp from "../pages/signUp";
 import Login from "../pages/login";
-
+import NotFound from "../pages/notFound";
 const rootRoute = createRootRoute({
   component: App,
+  notFoundComponent: NotFound,
 });
 
 const mainRoute = createRoute({

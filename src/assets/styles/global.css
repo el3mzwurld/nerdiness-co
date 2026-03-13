@@ -20,7 +20,9 @@ body {
 }
 
 .cta-section:nth-child(2) {
-  flex-direction: row-reverse;
+  @media (min-width: 1024px) {
+    flex-direction: row-reverse;
+  }
 }
 
 .link-item {
