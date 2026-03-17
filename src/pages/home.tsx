@@ -23,9 +23,10 @@ const Home = () => {
 
     window.addEventListener("resize", handleResize);
 
-    return window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
+  const LinkRoutes = ["/about", "academy", "/*", "/*", "/contact"];
   const Services = [
     { image: frontEnd, title: "Front-end development Training" },
     { image: backEnd, title: "Backend development Training" },
@@ -47,7 +48,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <header className="w-full h-auto bg-transparent">
-        <NavBar links={Links} windowWidth={windowWidth} />
+        <NavBar links={Links} windowWidth={windowWidth} routes={LinkRoutes} />
       </header>
 
       <main className="w-full min-h-screen flex-col bg-[#FFF6FB] flex gap-5 ">
@@ -241,6 +242,15 @@ const Home = () => {
   );
 };
 
+export const Links = [
+  "About us",
+  "Academy",
+  "Financials",
+  "Projects",
+  "Contact us",
+];
+export const LinkRoutes = ["/about", "/academy", "/*", "/*", "/contact"];
+
 interface serviceBodyProps {
   image: string;
   service: string;
@@ -291,7 +301,10 @@ const CtaSection = ({ title, body, image }: CtaSectionProps) => {
 
 export const Contact = () => {
   return (
-    <div className="contact-us w-full h-90vh py-5 lg:flex lg:flex-row-reverse items-center">
+    <div
+      className="contact-us w-full h-90vh py-5 lg:flex lg:flex-row-reverse items-center"
+      id="contact"
+    >
       <div className="illustration max-md:hidden flex flex-1 w-full h-[100%]">
         <img
           src={customer}

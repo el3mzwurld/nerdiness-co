@@ -9,6 +9,9 @@ import Home from "../pages/home";
 import SignUp from "../pages/signUp";
 import Login from "../pages/login";
 import NotFound from "../pages/notFound";
+import About from "../pages/about";
+import Academy from "../pages/academy";
+import ContactUs from "../pages/contactUs";
 const rootRoute = createRootRoute({
   component: App,
   notFoundComponent: NotFound,
@@ -32,6 +35,29 @@ const signUpRoute = createRoute({
   component: SignUp,
 });
 
-const routeTree = rootRoute.addChildren([mainRoute, LoginRoute, signUpRoute]);
+const AboutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/about",
+  component: About,
+});
+const AcademyRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/academy",
+  component: Academy,
+});
+
+const ContactUsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/contact",
+  component: ContactUs,
+});
+const routeTree = rootRoute.addChildren([
+  mainRoute,
+  LoginRoute,
+  signUpRoute,
+  AboutRoute,
+  AcademyRoute,
+  ContactUsRoute,
+]);
 
 export const AppRouter = createRouter({ routeTree });

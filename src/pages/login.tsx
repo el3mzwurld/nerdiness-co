@@ -1,14 +1,22 @@
 import { motion } from "motion/react";
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 
 import logo from "../assets/images/nav_logo.png";
 import illustration from "../assets/images/welcome-back.png";
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleNavtoHome = () => {
+    navigate({ to: "/" });
+  };
   return (
     <div className="lg:flex p-0">
       <div className="main max-md:w-full h-screen flex flex-1 flex-col">
         <div className="header h-auto w-full py-5 px-2.5">
-          <div className="logo w-[100px] h-[100px] lg:w-15 lg:h-15">
+          <div
+            className="logo w-[100px] h-[100px] lg:w-15 lg:h-15 cursor-pointer"
+            onClick={handleNavtoHome}
+          >
             <img
               src={logo}
               className="h-[100%] w-[100%] bg-white rounded-[10px] object-cover object-center p-2.5"

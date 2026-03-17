@@ -31,3 +31,15 @@ body {
     font-size: 12px;
   }
 }
+
+button {
+  cursor: pointer;
+}
+
+.manage {
+  &:hover {
+    .link-tray {
+      display: flex;
+    }
+  }
+}
