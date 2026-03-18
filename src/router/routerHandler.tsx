@@ -11,7 +11,7 @@ import Login from "../pages/login";
 import NotFound from "../pages/notFound";
 import About from "../pages/about";
 import Academy from "../pages/academy";
-import ContactUs from "../pages/contactUs";
+import ContactUs from "../pages/ContactUs";
 const rootRoute = createRootRoute({
   component: App,
   notFoundComponent: NotFound,
