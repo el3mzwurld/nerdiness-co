@@ -25,7 +25,7 @@ const About = () => {
         <NavBar links={Links} routes={LinkRoutes} windowWidth={windowWidth} />
       </header>
 
-      <main className="w-full flex flex-col h-auto bg-white">
+      <main className="w-full flex flex-col h-auto bg-white mb-5">
         <section className="abt-1 w-full relative z-0 max-lg:h-screen lg:h-screen">
           <div className="cover w-full h-full absolute -z-1 bg-pink-900 opacity-[0.3]"></div>
           <img
