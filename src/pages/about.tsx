@@ -8,6 +8,7 @@ import { FaCloudUploadAlt, FaUpload } from "react-icons/fa";
 import faq from "../assets/images/faq.png";
 import heroBg from "../assets/images/body-2.png";
 import team from "../assets/images/team.png";
+import joinTeam from "../assets/images/joinUs.png";
 const About = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -117,7 +118,7 @@ const About = () => {
             className="w-[90%] h-[50%] lg:w-1/2 lg:h-full"
           >
             <img
-              src={team}
+              src={joinTeam}
               alt=""
               className="w-auto h-[100%] object-cover object-center rounded-[10px]"
             />
