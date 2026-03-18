@@ -68,7 +68,7 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
                 Register
               </Link>
               <Link
-                to={"login"}
+                to={"/login"}
                 className="w-auto text-center text-pink-900 text-bold"
               >
                 Login
@@ -104,7 +104,7 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
                 Register
               </Link>
               <Link
-                to={"login"}
+                to={"/login"}
                 className="w-auto text-center text-pink-900 text-bold"
               >
                 Login

@@ -164,11 +164,11 @@ const Academy = () => {
               ></BoxBig>
             </div>
           </div>
-          <div className="box-group flex flex-col w-auto h-auto max-lg:gap-7.5 items-center px-15 py-10 lg:px-5 lg:py-2.5 gap-3.5 justify-between">
+          <div className="box-group flex flex-col w-auto h-auto max-lg:gap-7.5 items-center px-7 py-10 lg:px-5 lg:py-2.5 gap-3.5 justify-between">
             <h1 className="title text-[25px] lg:text-[20px] font-bold text-pink-900">
               Our Offerings
             </h1>
-            <div className="grp w-auto h-auto flex max-lg:flex-col flex-col gap-5 items-center px-10 py-2 lg:p-0 lg:w-auto">
+            <div className="grp w-auto max-lg:w-full h-auto flex max-lg:flex-col flex-col gap-5 items-center py-2 lg:p-0 lg:w-auto">
               <BoxSmall
                 title="Programming languages training"
                 image={true}
@@ -183,7 +183,7 @@ const Academy = () => {
               />
             </div>
           </div>
-          <div className="box-group w-auto h-auto flex max-lg:flex-col lg:flex-col gap-5 items-center px-10 py-2 lg:px-5 lg:py-0">
+          <div className="box-group w-full h-auto flex flex-col gap-5 items-center px-10 py-2 lg:px-2.5 lg:w-auto ">
             <h1 className="title text-[25px] lg:text-[20px] font-bold text-pink-900">
               Our Curriculum
             </h1>
@@ -254,7 +254,7 @@ const BoxBig = (props: BoxProps) => {
 
 const BoxSmall = (props: BoxProps) => {
   return (
-    <div className="box relative z-0 max-lg:w-full max-lg:h-50 lg:w-[200px] lg:h-[200px] rounded-md max-lg:shadow-pink-800 shadow-sm/50 ">
+    <div className="box relative z-0 max-lg:w-full max-lg:h-53 lg:w-[200px] lg:h-[200px] rounded-md max-lg:shadow-pink-800 shadow-sm/50 ">
       {props.image && props.isImgBg ? (
         <div className="absolute -z-1 w-full h-full">
           <div className="cover absolute -z-1 w-full h-full bg-black opacity-[0.3]"></div>
@@ -263,7 +263,7 @@ const BoxSmall = (props: BoxProps) => {
           </div>
         </div>
       ) : (
-        <div className="img-container w-full h-8/10 lg:7/10 flex items-center justify-center">
+        <div className="img-container w-full h-75/100 lg:7/10 flex items-center justify-center">
           <img
             src={props.imageSrc}
             className="w-1/2 h-auto object-fit object-center"
@@ -271,7 +271,7 @@ const BoxSmall = (props: BoxProps) => {
         </div>
       )}
       <div
-        className={`${props.image ? "text-[14px]" : "text-[18px]"} block text-center font-semibold mt-2.5 lg:m-0 lg:text-[12px]`}
+        className={`${props.image ? "text-[12px]" : "text-[18px]"} block text-center font-semibold mt-2.5 lg:m-0 lg:text-[12px] max-lg:px-2`}
       >
         {props.title}
       </div>
