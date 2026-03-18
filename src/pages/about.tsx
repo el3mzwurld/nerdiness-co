@@ -119,7 +119,6 @@ const About = () => {
           >
             <img
               src={joinTeam}
-              alt=""
               className="w-auto h-[100%] object-cover object-center rounded-[10px]"
             />
           </motion.div>
