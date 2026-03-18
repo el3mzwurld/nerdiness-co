@@ -108,7 +108,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="abt-4  w-full max-md:h-screen flex flex-col items-center justify-center gap-10 px-10 py-2.5 lg:flex-row-reverse lg:py-5">
+        <section className="abt-4  w-full max-md:h-screen flex flex-col items-center justify-center gap-10 px-10 py-2.5 lg:flex-row-reverse lg:py-5 max-lg:my-5">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
