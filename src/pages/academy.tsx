@@ -27,7 +27,7 @@ const Academy = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
-  const LinkRoutes = ["/about", "/academy", "/*", "/*", "/*"];
+  const LinkRoutes = ["/about", "/academy", "/*", "/*", "/contact"];
 
   return (
     <div className="overflow-hidden">

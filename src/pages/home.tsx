@@ -69,16 +69,20 @@ const Home = () => {
               initial={{ opacity: 0.1, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeIn" }}
-              className="txt w-[80%] h-auto flex flex-col gap-5 sm:pl-9"
+              className="txt w-[80%] lg:w-full lg:pl-25 h-auto flex max-lg:itmes-center flex-col gap-5 sm:pl-9 lg:gap-2 lg:items-start"
             >
-              <p className="title max-[390px]:text-[30px] text-[40px] sm:text-[20px] lg:text-[30px] w-full text-white font-semibold text-center">
+              <p className="title max-[390px]:text-[30px] text-[40px] sm:text-[20px] lg:text-[22px] w-full text-white font-semibold text-center lg:text-left">
                 TECHNOLOGICALLY TRANSFORMING LIVES
               </p>
-              <p className="text-[18px] text-center text-white px-5 font-light leading-7 sm:text-[12px] lg:text-[14px] selection:bg-transparent">
+              <p className="text-[18px] text-center text-white px-5 font-light leading-7 sm:text-[12px] lg:text-[12px] xl:text-[14px] selection:bg-transparent lg:text-left lg:w-85/100 lg:p-0">
                 Our continuous, excellent systems and solutions support, stand
                 us out of the crowd. We believe that we can only succeed when
                 you do!
               </p>
+
+              <button className="btn bg-white lg:w-[120px] h-[35px] mt-5 text-[12px] text-pink-900 rounded-md font-bold">
+                Learn More
+              </button>
             </motion.div>
           </motion.div>
 
@@ -87,9 +91,9 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.9 }}
-            className="hidden sm:flex sm:w-[45%] sm:relative sm:h-full"
+            className="hidden sm:flex sm:w-[51%] sm:relative sm:h-full"
           >
-            <div className="container w-full absolute -right-20 top-1/2 h-[60%] rounded-sm -translate-y-1/2">
+            <div className="container w-full absolute -right-16 top-1/2 h-[60%] rounded-sm -translate-y-1/2">
               <img
                 src={hero}
                 className="object-cover object-center w-full h-full"
@@ -113,11 +117,11 @@ const Home = () => {
             />
           </motion.div>
 
-          <div className="txt flex flex-col items-center justify-center lg:max-w-[40%] max-md:w-full max-md:h-auto gap-[10px]">
-            <h2 className="title text-[#7B0041] w-full text-center font-bold text-[20px] lg:text-[22px]">
+          <div className="txt flex flex-col items-center lg:items-start justify-center lg:max-w-[40%] max-md:w-full max-md:h-auto gap-[10px]">
+            <h2 className="title text-[#7B0041] w-full text-center lg:text-left text-[20px] lg:text-[30px]">
               Who we are
             </h2>
-            <p className="text-black text-[12px] text-center leading-[2.5] max-[450px]:text-[14px] lg:text-[14px]">
+            <p className="text-black text-[12px] text-center leading-[2.5] lg:text-left max-[450px]:text-[14px] lg:text-[14px]">
               We are a leading IT solutions provider based in Alberta, Canada.
               We provide custom made software and application design,
               installation, and technology infrastructure support.
@@ -127,7 +131,7 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.8 }}
-              className="bg-[#7B0041] px-8 py-3 text-[12px] text-white rounded-[5px]"
+              className="bg-[#9D2F69] px-8 py-3 text-[12px] text-white rounded-[5px]"
             >
               Read More
             </motion.button>

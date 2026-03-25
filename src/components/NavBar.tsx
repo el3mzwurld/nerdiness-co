@@ -21,8 +21,8 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
 
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <div className="w-full px-2.5 py-2.5 flex items-center justify-between lg:bg-transparent bg-[#50052D] absolute top-0 left-0 z-1">
-      <div className="logo w-[55px] h-[auto]" onClick={handleNavtoHome}>
+    <div className="w-full px-2.5 py-2.5 flex items-center justify-between lg:bg-transparent bg-[#50052D] absolute top-0 left-0 lg:gap-25 z-1">
+      <div className="logo w-[50px] h-[auto]" onClick={handleNavtoHome}>
         <img
           src={logo}
           className="w-[100%] h-auto bg-white rounded-[0.5em]"
@@ -81,12 +81,12 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
       )}
 
       {windowWidth > 1023 && (
-        <nav className="max-sm:hidden flex-1 flex w-full h-auto items-center gap-2 list-none py-[10px] px-5 text-[12px] font-medium text-gray-500 justify-between">
-          <ul className="flex items-center justify-center gap-3.5 text-pink-900 text-[14px] xl:gap-5">
+        <nav className="max-sm:hidden flex-1 flex w-full h-auto items-center gap-2 list-none pr-10 text-[12px] font-medium text-gray-500 justify-between">
+          <ul className="flex items-center justify-center gap-9 text-pink-900 xl:text-[14px]">
             {links.map((link, index) => (
               <li
                 key={index}
-                className="w-auto text-center cursor-pointer before:absolute before:w-full relative before:-bottom-1.5 before:bg-pink-700 before:h-1 before:rounded-md before:opacity-0 before:invisible before-content-[''] hover:before:opacity-100 hover:before:visible before:ease-in-out before:duration-500 hover:before:-bottom-1 before:translate-y-1 hover:before:w-[80%] before:-translate-x-1/2 before:left-1/2"
+                className="w-auto text-center text-[12px] xl:text-[14px] cursor-pointer before:absolute before:w-full relative before:-bottom-1.5 before:bg-pink-700 before:h-1 before:rounded-md before:opacity-0 before:invisible before-content-[''] hover:before:opacity-100 hover:before:visible before:ease-in-out before:duration-500 hover:before:-bottom-1 before:translate-y-1 hover:before:w-[80%] before:-translate-x-1/2 before:left-1/2"
                 onClick={() => navToRoute(routes[index])}
               >
                 {link}
@@ -94,9 +94,9 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
             ))}
           </ul>
 
-          <li className="w-auto relative text-center text-[14px] text-gray-200 cursor-pointer manage">
+          <li className="w-auto relative text-center lg:text-[12px] xl:text-[14px] text-gray-200 cursor-pointer manage">
             Manage Account
-            <li className="link-tray hidden absolute w-full h-25 flex-col items-center justify-evenly bg-gray-400">
+            <li className="link-tray hidden absolute lg:px-2.5 rounded-sm w-full h-25 flex-col items-center justify-evenly bg-white lg:text-[12px] xl:text-[14px]">
               <Link
                 to={"/create-account"}
                 className="w-auto text-center text-pink-900 text-bold"

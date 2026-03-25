@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import { motion } from "motion/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { FaCloudUploadAlt, FaUpload } from "react-icons/fa";
+import { FaCloudUploadAlt} from "react-icons/fa";
 
 import faq from "../assets/images/faq.png";
 import heroBg from "../assets/images/body-2.png";
