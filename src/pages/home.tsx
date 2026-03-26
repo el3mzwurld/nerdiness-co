@@ -14,6 +14,7 @@ import { motion, AnimatePresence, easeInOut } from "motion/react";
 import { FaMediumM, FaLinkedinIn, FaMedium } from "react-icons/fa";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa6";
 import { useEffect, useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 const Home = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -137,7 +138,7 @@ const Home = () => {
             </motion.button>
           </div>
         </section>
-        <section className="body-3 w-full lg:px-10 max-md:h-min-screen flex flex-col items-center justify-evenly px-5 py-10 gap-10 lg:flex-row lg:justify-start lg:flex-row-reverse">
+        <section className="body-3 w-full lg:px-30 max-md:h-min-screen flex flex-col items-center justify-evenly px-5 py-10 gap-10 lg:justify-start lg:flex-row-reverse">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -145,18 +146,18 @@ const Home = () => {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="flex flex-col h-auto max-md:w-full gap-5 items-center lg:flex-row lg:w-[65%] lg:flex-row-reverse"
           >
-            <div className="video max-md:h-[480px] flex flex-col rounded-[10px] max-md:w-full lg:w-5/10 lg:100">
-              <p className="title text-[#50052d] text-[20px] font-bold">
+            <div className="video max-md:h-[480px] flex flex-col rounded-[10px] max-md:w-full lg:w-45/100 lg:h-120">
+              <p className="title text-[#7B0041] text-[20px] font-medium lg:w-full lg:h-auto lg:text-left">
                 Nerdiness Academy
               </p>
-              <div className="w-full flex-1 h-full flex flex-col justify-evenly items-start gap-.5 lg:h-1/2 lg:w-full">
-                <div className="vid-container w-full h-[50%] bg-gray-500 rounded-lg"></div>
-                <div className="txt w-full flex flex-col items-start gap-4 h-auto">
-                  <p className="title font-bold text-pink-300 text-[14px]">
+              <div className="w-full flex-1 h-full flex flex-col justify-evenly lg:justify-center items-start gap-.5 lg:h-1/2 lg:w-full lg:gap-1.5">
+                <div className="vid-container w-full h-55 bg-gray-500 rounded-lg"></div>
+                <div className="txt w-full flex flex-col items-start gap-4 h-auto lg:gap-2">
+                  <p className="title font-light text-[#B5889F] text-[14px]">
                     Functional and Interactive
                   </p>
                   <p className="page-cat font-bold text-[#9D2F69] text-[14px]">
-                    STUDY CENTER
+                    Study Center
                   </p>
                   <p className="desc text-[12px] w-[90%]">
                     We have a functioning, adaptable, interactive, safe and
@@ -167,24 +168,29 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="cta max-md:h-[400px] rounded-md bg-[#50052D] max-md:w-full p-5 flex flex-col items-start lg:flex-1">
+            <div className="cta max-md:h-100 rounded-md bg-[#50052D] max-md:w-full p-5 flex flex-col items-start lg:flex-1">
               <h2 className="title text-white font-bold">About our academy</h2>
 
-              <p className="text-white font-extralight text-[12px] my-5 leading-[2]">
-                We prepare you for tomorrow from today. Nerdiness offers a range
-                of professionally accredited front-end and back-end coding
-                courses based on our schedule. Check here for upcoming programs.
-                <br />
-                Nerdiness is involved across the entire value chain of the IT
-                industry so our students get an opportunity to contribute to
-                ongoing projects to further develop practical skills and the
-                confidence required in real-life work situations which can
-                immediately be transferred into today’s workplace
-                <br />
-                As part of our services, we offer a 8 weeks bootcamp
+              <p className="text-white font-extralight text-[12px] my-5 leading-loose lg:flex lg:flex-col lg:gap-1 ">
+                <span>
+                  We prepare you for tomorrow from today. Nerdiness offers a
+                  range of professionally accredited front-end and back-end
+                  coding courses based on our schedule. Check here for upcoming
+                  programs.
+                </span>
+                <span>
+                  Nerdiness is involved across the entire value chain of the IT
+                  industry so our students get an opportunity to contribute to
+                  ongoing projects to further develop practical skills and the
+                  confidence required in real-life work situations which can
+                  immediately be transferred into today’s workplace
+                </span>
+                <span>
+                  As part of our services, we offer a 8 weeks bootcamp
+                </span>
               </p>
 
-              <button className="w-[50%] cursor-pointer lg:w-1/3 bg-transparent border-white border-[1.5px] text-white rounded-md my-2.5 text-[12px] py-1.25">
+              <button className="w-[50%] cursor-pointer lg:w-1.5/3 bg-transparent border-white border text-white rounded-md my-2.5 text-[12px] py-2">
                 Get Started
               </button>
             </div>
@@ -200,7 +206,7 @@ const Home = () => {
             ))}
           </div>
         </section>
-        <section className="ctas w-full h-auto py-5 px-5 flex flex-col gap-5">
+        <section className="ctas w-full h-auto py-5 px-5 flex flex-col gap-5 lg:gap-8 lg:px-20 xl:px-15">
           {CtaSections.map((section, index) => (
             <CtaSection
               key={index}
@@ -210,11 +216,11 @@ const Home = () => {
             />
           ))}
         </section>
-        <section className="careers w-full h-[500px] py-5 flex flex-col gap-5 relative z-0 lg:h-[350px]">
+        <section className="careers w-full h-[500px] py-5 flex flex-col gap-5 relative z-0 lg:h-[350px] xl:h-130">
           <div className="cover absolute z-1 h-full w-full bg-[#7b004252]"></div>
           <img
             src={careers}
-            className="absolute w-auto h-full object-cover object-center -z-2"
+            className="absolute w-full h-full object-cover object-center -z-2"
             alt=""
           />
           <motion.div
@@ -236,7 +242,10 @@ const Home = () => {
             </button>
           </motion.div>
         </section>
-        <Contact />
+
+        <section className="h-auto w-full px-20">
+          <Contact />
+        </section>
       </main>
 
       <footer>
@@ -261,7 +270,7 @@ interface serviceBodyProps {
 }
 const ServiceBody = ({ image, service }: serviceBodyProps) => {
   return (
-    <div className="service relative w-full h-30 z-0 overflow-hidden lg:h-20 overflow-hidden  rounded-md ">
+    <div className="service relative w-full h-30 z-0 overflow-hidden lg:h-30 overflow-hidden  rounded-md ">
       <div className="container absolute w-full h-full bg-gray-700 -z-1 blur-[1px]">
         <img
           src={image}
@@ -270,7 +279,7 @@ const ServiceBody = ({ image, service }: serviceBodyProps) => {
         />
         <div className="cover h-full w-full absolute   bg-[#00000047] z-0  rounded-md"></div>
       </div>
-      <span className="txt  bg-none absolute w-full h-full  rounded-md  flex items-center justify-center max-lg:text-[20px] z-1 text-[20px] font-bold text-white">
+      <span className="txt  bg-none absolute w-full h-full  rounded-md  flex items-center justify-center max-lg:text-[20px] z-1 lg:text-[16px] font-bold text-white">
         {service}
       </span>
     </div>
@@ -291,11 +300,13 @@ const CtaSection = ({ title, body, image }: CtaSectionProps) => {
         ></img>
       </div>
       <div className="text-container flex-1 flex flex-col items-start justify-between py-2 pt-3.5 lg:flex-1 lg:w-full lg:h-full lg:justify-evenly">
-        <h2 className="text-[#50052d] text-[20px] font-medium">{title}</h2>
-        <p className="text-black font-light text-3.5 text-left leading-6">
+        <h2 className="text-[#50052d] text-[20px] font-medium lg:text-[26px]">
+          {title}
+        </h2>
+        <p className="text-black font-light text-3.5 text-left leading-loose lg:text-[16px] xl:text-lg">
           {body}
         </p>
-        <button className="text-white bg-pink-800 py-2.5 px-4 text-center lg:px:2.5 lg:py-2 cursor-pointer">
+        <button className="text-white bg-[#9D2F69] py-2.5 px-4 text-center lg:px:2.5 lg:py-2 cursor-pointer">
           Read More
         </button>
       </div>
@@ -304,19 +315,38 @@ const CtaSection = ({ title, body, image }: CtaSectionProps) => {
 };
 
 export const Contact = () => {
+  const [formError, setFormError] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const isEmailValid = (mail: string): boolean => {
+    const testEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+    return testEmail;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!isEmailValid(email)) {
+      setFormError((prev) => !prev);
+      return;
+    }
+
+    setFormError(false);
+    console.error("The Email is valid :", email);
+  };
   return (
     <div
-      className="contact-us w-full h-90vh py-5 lg:flex lg:flex-row-reverse items-center"
+      className="contact-us w-full h-90vh py-5 lg:py-0 lg:flex lg:flex-row-reverse items-center"
       id="contact"
     >
-      <div className="illustration max-md:hidden flex flex-1 w-full h-[100%]">
+      <div className="illustration max-md:hidden flex flex-1 w-30/100 h-[100%]">
         <img
           src={customer}
           className="object-cover object-center w-full h-full"
           alt=""
         />
       </div>
-      <div className="form-container max-lg:h-full max-lg:w-full flex flex-col items-start justify-center lg:w-50/100">
+      <div className="form-container max-lg:h-full max-lg:w-full flex flex-col items-start justify-center lg:w-37.5/100">
         <div className="title flex flex-col items-start m-3">
           <p className="font-bold text-[30px]">Get In Touch</p>
           <p className="font-medium text-[16px] w-full mt-2.5">
@@ -327,32 +357,40 @@ export const Contact = () => {
         <motion.form
           action=""
           className="flex flex-col w-full px-2.5 items-start "
-          onSubmit={(e) => {
-            e.preventDefault();
-          }}
+          onSubmit={(e) => handleSubmit(e)}
         >
           <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
             <label htmlFor="" className="text-[14px]">
               Full name
             </label>
-            <input className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none"></input>
+            <input className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none lg:text-sm"></input>
           </div>
           <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
             <label htmlFor="" className="text-[14px]">
               Email
             </label>
             <input
-              type="email"
-              className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none"
+              type="text"
+              className="h-12 w-full border-[1.5px] px-2.5 focus:outline-none lg:text-sm"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
+            {formError && (
+              <span className="text-red-500 text-[10px] my-0.5 w-full text-left">
+                Input a valid email address
+              </span>
+            )}
           </div>
           <div className="field h-auto w-full flex flex-col gap-3.5 py-2.5">
             <label htmlFor="" className="text-[14px]">
-              Email
+              Message
             </label>
-            <textarea className="h-25 w-full border-[1.5px] px-2.5 py-2.5 focus:outline-none"></textarea>
+            <textarea
+              className="h-25 w-full border-[1.5px] px-2.5 py-2.5 focus:outline-none placeholder:text-gray-400 lg:text-sm"
+              placeholder="Tell us what you think..."
+            ></textarea>
           </div>
-          <button className="px-15 mt-5 py-2.5 rounded-md text-white font-bold bg-pink-800">
+          <button className="px-10 mt-5 py-2.5 rounded-md text-white font-bold bg-[#7B0041]">
             Send
           </button>
         </motion.form>
@@ -364,6 +402,12 @@ export const Contact = () => {
 export const Footer = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  const navigate = useNavigate();
+
+  const handleHomeNav = () => {
+    navigate({ to: "/" });
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -374,9 +418,12 @@ export const Footer = () => {
     return window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <div className="footer w-full h-auto py-5 bg-[#50052D] lg:flex ">
+    <div className="footer w-full h-auto py-5 bg-[#50052D] lg:flex lg:px-20 lg:py-15">
       <div className="logo max-sm:h-[350px] flex flex-col px-3.5 pt-3.5 lg:w-3/10 lg:py-2.5 lg:items-start">
-        <div className="main w-20.75 h-20.75 lg:w-18 lg:h-18">
+        <div
+          className="main w-20.75 h-20.75 lg:w-18 lg:h-18 cursor-pointer"
+          onClick={handleHomeNav}
+        >
           <img src={logo} className="bg-white p-2.5 rounded-md" alt="" />
         </div>
         <p className="w-full h-auto leading-7.5 text-[14px] text-white font-light my-3.5">

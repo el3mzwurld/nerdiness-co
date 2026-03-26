@@ -18,7 +18,7 @@ const ContactUs = () => {
       <header>
         <NavBar links={Links} windowWidth={windowWidth} routes={LinkRoutes} />
       </header>
-      <main className="max-lg:py-15 lg:py-10 xl:py-8">
+      <main className="max-lg:py-15 lg:py-10 lg:px-15 xl:py-8">
         <Contact />
       </main>
       <footer>
