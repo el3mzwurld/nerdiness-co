@@ -10,7 +10,7 @@ import hero from "../assets/images/hero-img.png";
 import productCta from "../assets/images/cta-products.png";
 import finCta from "../assets/images/financials-cta.png";
 import customer from "../assets/images/Customer Service 1.png";
-import { motion, AnimatePresence, easeInOut } from "motion/react";
+import { motion, easeInOut } from "motion/react";
 import { FaMediumM, FaLinkedinIn, FaMedium } from "react-icons/fa";
 import { FaInstagram, FaTwitter, FaFacebookF } from "react-icons/fa6";
 import { useEffect, useState } from "react";
@@ -332,7 +332,7 @@ export const Contact = () => {
     }
 
     setFormError(false);
-    console.error("The Email is valid :", email);
+    console.log("The Email is valid :", email);
   };
   return (
     <div

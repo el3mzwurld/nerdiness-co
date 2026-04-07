@@ -33,12 +33,12 @@ const SignUp = () => {
             alt=""
           />
         </div>
-        <div className="title absolute z-1 bg-transparent w-full h-full flex items-center justify-center text-6xl text-white font-bold">
+        <div className="title absolute z-1 bg-transparent w-full h-full flex items-center justify-center text-[90px] text-white font-medium">
           REGISTER NOW!
         </div>
       </div>
       <div className="form-container flex flex-col max-lg:px-5 py-4.5 w-full min-h-screen bg-pink-600 items-center gap-5">
-        <h2 className="title text-2xl block text-white font-semibold">
+        <h2 className="title text-[40px] my-5 block text-white font-semibold">
           Registration
         </h2>
 
@@ -50,7 +50,7 @@ const SignUp = () => {
           <h1 className="form-title lg:text-2xl font-bold lg:my-5">
             Please fill in your details below
           </h1>
-          <div className="form-group flex flex-col gap-1 w-full lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               First Name
             </label>
@@ -60,7 +60,7 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Last Name
             </label>
@@ -70,7 +70,7 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Preffered Name
             </label>
@@ -80,7 +80,7 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Gender
             </label>
@@ -90,7 +90,7 @@ const SignUp = () => {
               className="w-full h-10.5  px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Phone Number
             </label>
@@ -100,7 +100,7 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Email
             </label>
@@ -110,7 +110,7 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Highest Educational Qualification
             </label>
@@ -120,13 +120,13 @@ const SignUp = () => {
               className="w-full h-10.5 px-2.5 py-1.5 text-[14px] border border-black rounded-md focus:outline-none"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Address
             </label>
             <textarea className="w-full h-20 border px-2.5 py-1.5 text-[14px] border-black rounded-md focus:outline-none" />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Work Experience
             </label>
@@ -135,7 +135,7 @@ const SignUp = () => {
               className="w-full h-20 border px-2.5 py-1.5 text-[14px] border-black rounded-md focus:outline-none"
             />
           </div>
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Highest Educational Qualification
             </label>
@@ -145,7 +145,7 @@ const SignUp = () => {
               className="w-full h-10.5 border border-black rounded-md flex px-2.5 items-center justify-between py-2.5"
             />
           </div>{" "}
-          <div className="form-group flex flex-col gap-1 w-full  lg:w-6/10 items-start">
+          <div className="form-group flex flex-col gap-1 w-full  lg:w-7/10 items-start">
             <label htmlFor="" className="text-black text-[18px] lg:text-[16px]">
               Upload Picture Of Past Code/Work Done(If any)
             </label>
@@ -155,7 +155,7 @@ const SignUp = () => {
               className="w-full h-10.5 border border-black rounded-md flex px-2.5 items-center justify-center py-2.5"
             ></input>
           </div>{" "}
-          <div className="form-txt w-full px-2.5 py-2.5 h-auto flex flex-col items-center gap-2.5">
+          <div className="form-txt w-full px-2.5 py-2.5 h-auto flex flex-col items-center gap-2.5 lg:px-5.5">
             <h2 className="title text-lg font-bold text-black w-full text-left lg:text-[16px]">
               Declaration
             </h2>
@@ -168,8 +168,8 @@ const SignUp = () => {
               be untrue
             </p>
 
-            <div className="inputfield w-full h-auto flex flex-col justify-center items-start my-5 gap-2">
-              <label htmlFor="" className="">
+            <div className="inputfield w-75/100 h-auto flex flex-col justify-center items-center my-5 gap-2">
+              <label htmlFor="" className="w-full text-left">
                 Signature
               </label>
               <input
@@ -180,14 +180,14 @@ const SignUp = () => {
               />
             </div>
 
-            <p className="text text-lg text-pink-800 w-full text-left leading-6 font-semibold lg:text-[16px]">
+            <p className="text text-lg text-pink-800 w-full text-left leading-6 font-semibold lg:text-[16px] lg-px-2.5">
               Please note that attendance is mandatory for all classes
               throughout the duration of your course. If you will be absent due
               to unavoidable circumstances, please contact our programs office.
               Click here.
             </p>
 
-            <button className="w-[110px] h-auto py-3.5 bg-pink-950 my-2.5 text-white rounded-lg lg:text-[14px]">
+            <button className="w-[160px] h-[55px] bg-pink-950 my-2.5 text-white rounded-lg lg:text-[14px] lg:my-4">
               Submit
             </button>
           </div>

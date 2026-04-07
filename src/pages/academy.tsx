@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import { Footer } from "./home";
 import { motion } from "motion/react";
-
+import { useNavigate } from "@tanstack/react-router";
 import bootcamp from "../assets/images/bootcamp.png";
 import illustration1 from "../assets/images/mobWhoweare.png";
 import illustration2 from "../assets/images/standout.svg";
-import test from "../assets/images/hero-img.png";
 import acaBox1 from "../assets/images/aca-box1.png";
 import acaBox2 from "../assets/images/academyBox2.png";
 import calendar from "../assets/images/calendar.png";
@@ -29,6 +28,10 @@ const Academy = () => {
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
   const LinkRoutes = ["/about", "/academy", "/*", "/*", "/contact"];
 
+  const navigate = useNavigate();
+  const navToLogin = () => {
+    navigate({ to : "/login"});
+  }
   return (
     <div className="overflow-hidden">
       <header className="w-full h-auto bg-transparent">
@@ -37,10 +40,10 @@ const Academy = () => {
 
       <main className="w-full min-h-screen lg:mb-10">
         <section className="academy-hero relative flex-col z-0 w-full max-lg:h-150 max-lg:py-17.5 flex items-center justify-center lg:justify-between lg:h-125">
-          <div className="cta-group relative max-lg:w-full max-lg:h-full flex px-10 flex-col lg:items-start justify-center lg:flex-1 gap-10 lg:w-full">
-            <div className="txt text-center">
+          <div className="cta-group relative max-lg:w-full max-lg:h-full flex px-10 flex-col lg:items-start justify-center lg:flex-1 gap-5 lg:w-full lg:px-20">
+            <div className="txt text-center lg:text-left">
               <p className="text-[18px]">We prepare you for tomorrow</p>
-              <p className="text-[30px] font-bold text-pink-900">
+              <p className="text-3xl lg:my-2 font-bold text-pink-900">
                 Nerdiness Academy
               </p>
             </div>
@@ -50,17 +53,17 @@ const Academy = () => {
               transition={{ duration: 0.4, ease: "easeIn" }}
               className="btn w-full h-auto flex items-center justify-center gap-5 lg:w-auto"
             >
-              <button className=" bg-pink-900 py-2.5 items-center justify-center px-5 text-white">
+              <button className=" bg-pink-900 py-2.5 items-center justify-center w-40 text-white rounded-md">
                 Register Now
               </button>
-              <button className="bg-white flex py-2.5 items-center justify-center px-8  shadow-sm/30 shadow-pink-800">
+              <button className="shadow bg-white flex py-2.5 items-center justify-center w-40 rounded-md">
                 Login
               </button>
             </motion.div>
-            <div className="image1 -z-1 absolute max-lg:hidden top-12 right-9 w-70">
+            <div className="image1 -z-1 absolute max-lg:hidden top-15 right-13 w-70">
               <img src={img1} alt="" />
             </div>
-            <div className="image2 -z-2 absolute max-lg:hidden -top-20 -right-30 w-100">
+            <div className="image2 -z-2 absolute max-lg:hidden -top-40 -right-70 w-150">
               <img src={img2} alt="" />
             </div>
           </div>
@@ -72,7 +75,7 @@ const Academy = () => {
                 alt=""
               />
             </div>
-            <div className="content z-1 w-full h-full bg-transparent text-white py-5  lg:py-3 flex items-center justify-evenly lg:justify-between lg:px-10">
+            <div className="content z-1 w-full h-full bg-transparent text-white py-5  lg:py-3 flex items-center justify-evenly lg:justify-between lg:px-40">
               <p className="font-semibold text-[18px] lg:text-[14px]">
                 8 weeks bootcamp
               </p>
@@ -95,12 +98,14 @@ const Academy = () => {
                   alt=""
                 />
               </div>
-              <div className="desktop max-lg:hidden bg-white h-full w-full flex items-end justify-end">
-                <img
-                  src={curiousGray}
-                  className="w-full h-8/10 object-cover object-center"
-                  alt=""
-                />
+              <div className="desktop max-lg:hidden bg-white h-full w-full flex items-center justify-center">
+                <div className="actual w-8/10 h-8/10 flex items-center justify-center">
+                  <img
+                    src={curiousGray}
+                    className="w-9/10 h-9/10 object-cover object-center"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
             <div className="txt flex flex-col max-lg:w-full max-lg:h-auto lg:h-full max-lg:justify-start items-center justify-center py-10 px-7.5 max-lg:gap-8 lg:flex-1 lg:bg-pink-950 lg:gap-4 lg:px-18">
@@ -145,8 +150,8 @@ const Academy = () => {
             </div>
           </div>
         </section>
-        <section className="academy-3 w-full max-lg:min-h-screen flex flex-col lg:flex-row items-center justify-center lg:justify-evenly">
-          <div className="box-group w-full h-auto flex flex-col gap-5 items-center px-10 py-2 lg:px-2.5 lg:w-auto ">
+        <section className="academy-3 w-full max-lg:min-h-screen flex flex-col lg:flex-row items-start justify-center lg:justify-evenly lg:px-10">
+          <div className="box-group w-full h-auto flex flex-col gap-5 items-center px-10 py-2 lg:px-0 lg:w-auto ">
             <h1 className="title text-[25px] lg:text-[20px] font-bold text-pink-900">
               Trainings
             </h1>
@@ -164,7 +169,7 @@ const Academy = () => {
               ></BoxBig>
             </div>
           </div>
-          <div className="box-group flex flex-col w-auto h-auto max-lg:gap-7.5 items-center px-7 py-10 lg:px-5 lg:py-2.5 gap-3.5 justify-between">
+          <div className="box-group flex flex-col w-auto h-auto max-lg:gap-7.5 items-center px-7 py-10 lg:px-5 lg:py-2.5 gap-3.5 justify-between lg:px-0 lg:gap-5">
             <h1 className="title text-[25px] lg:text-[20px] font-bold text-pink-900">
               Our Offerings
             </h1>
@@ -194,7 +199,7 @@ const Academy = () => {
           <h1 className="text-[25px] text-pink-900 block font-semibold">
             Upcoming Events
           </h1>
-          <div className="container flex flex-1 w-full h-full items-center justify-center">
+          <div className="container flex flex-1 w-full h-full items-center justify-center lg:px-10 lg:py-10">
             <img
               src={calendar}
               className="w-full h-auto object-cover object-center"
@@ -222,15 +227,15 @@ interface BoxProps {
 const BoxBig = (props: BoxProps) => {
   return (
     <div
-      className={`box relative z-0 max-lg:w-full max-lg:h-80 lg:w-[250px] lg:h-[450px] rounded-[20px] flex flex-col items-center justify-center ${props.image && "text-white"} ${!props.image && "bg-[#722D54]"}`}
+      className={`box relative z-0 max-lg:w-full max-lg:h-80 lg:w-[250px] xl:w-70 lg:h-[450px] rounded-md flex flex-col items-center justify-evenly ${props.image && "text-white"} ${!props.image && "bg-[#722D54]"}`}
     >
       {props.image && props.isImgBg && (
         <div className="absolute -z-1 w-full h-full rounded-md">
-          <div className="cover absolute -z-1 w-full h-full bg-black opacity-[0.3] rounded-[20px]"></div>
-          <div className="img absolute -z-2 w-full h-full rounded-[20px]">
+          <div className="cover absolute -z-1 w-full h-full bg-black opacity-[0.5] rounded-md"></div>
+          <div className="img absolute -z-2 w-full h-full rounded-md">
             <img
               src={props.imageSrc}
-              className="w-full h-full object-cover object-center rounded-[20px]"
+              className="w-full h-full object-cover object-center rounded-md"
             />
           </div>
         </div>
@@ -240,11 +245,11 @@ const BoxBig = (props: BoxProps) => {
           <img src={props.imageSrc} alt="" />
         </div>
       )}
-      <div className="txt max-lg:text-[20px] w-full h-auto lg:text-[18px] flex items-center text-white justify-center">
+      <div className="txt max-lg:text-[20px] w-full h-auto lg:text-[18px] flex items-center text-white justify-center lg:font-bold lg:px-5 text-center lg:text-[24px]">
         {props.title}
       </div>
       {props.button && (
-        <button className="absolute bottom-4 left-5 px-6 py-3 lg:px-3 lg:py-1.5 text-[#722D54] bg-white rounded-md">
+        <button className="bottom-4 left-5 lg:text-sm lg:font-bold px-6 py-3 lg:px-3 lg:py-1.5 text-[#722D54] bg-white rounded-md">
           {props.buttonTxt}
         </button>
       )}
@@ -254,7 +259,7 @@ const BoxBig = (props: BoxProps) => {
 
 const BoxSmall = (props: BoxProps) => {
   return (
-    <div className="box relative z-0 max-lg:w-full max-lg:h-53 lg:w-[200px] lg:h-[200px] rounded-md max-lg:shadow-pink-800 shadow-sm/50 ">
+    <div className="box-small relative z-0 max-lg:w-full max-lg:h-53 lg:w-[200px] lg:h-[200px] rounded-md max-lg:shadow-pink-800">
       {props.image && props.isImgBg ? (
         <div className="absolute -z-1 w-full h-full">
           <div className="cover absolute -z-1 w-full h-full bg-black opacity-[0.3]"></div>
@@ -271,7 +276,7 @@ const BoxSmall = (props: BoxProps) => {
         </div>
       )}
       <div
-        className={`${props.image ? "text-[12px]" : "text-[18px]"} block text-center font-semibold mt-2.5 lg:m-0 lg:text-[12px] max-lg:px-2`}
+        className={`${props.image ? "text-[12px]" : "text-[18px]"} block text-center font-semibold mt-2.5 lg:m-0 lg:text-[12px] max-lg:px-2 lg:px-5 lg:text-[13px]`}
       >
         {props.title}
       </div>

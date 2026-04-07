@@ -43,3 +43,11 @@ button {
     }
   }
 }
+
+.shadow {
+  box-shadow: 16px 2px 50px rgba(219, 39, 119, 0.3);
+}
+
+.box-small {
+  box-shadow: 20px 2px 50px rgba(184, 45, 98, 0.211);
+}
