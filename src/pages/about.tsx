@@ -184,14 +184,15 @@ interface QuestionProps {
 const Question = ({ question, answer }: QuestionProps) => {
   return (
     <div className="container w-full h-auto max-lg:text-lg max-lg:py-3.5 lg:p-0 lg:py-0 bg-gray-300 text-[#50052D] rounded-sm flex justify-between">
-      <Accordion className="w-full h-full">
+      <Accordion className="w-full h-full bg-gray-300">
         <AccordionSummary
-          className=" w-full h-auto bg-gray-300"
+          className="summary w-full h-auto"
+          sx={{ backgroundColor: "#bdbdbdbd" }}
           expandIcon={<ExpandMoreRoundedIcon sx={{ color: "#50052D" }} />}
         >
           <Typography component="span">{question}</Typography>
         </AccordionSummary>
-        <AccordionDetails className="w-full h-auto bg-gray-200">
+        <AccordionDetails className="w-full h-auto bg-white">
           <Typography>{answer}</Typography>
         </AccordionDetails>
       </Accordion>

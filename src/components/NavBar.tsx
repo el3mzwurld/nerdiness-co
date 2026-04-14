@@ -96,16 +96,16 @@ const NavBar = ({ links, windowWidth, routes }: NavProps) => {
 
           <li className="w-auto relative text-center lg:text-[12px] xl:text-[14px] text-gray-200 cursor-pointer manage">
             Manage Account
-            <li className="link-tray hidden absolute lg:px-2.5 rounded-sm w-full h-25 flex-col items-center justify-evenly bg-white lg:text-[12px] xl:text-[14px]">
+            <li className="link-tray hidden absolute lg:px-2.5 rounded-sm w-[125%] h-25 flex-col items-center justify-evenly bg-white lg:text-[12px] xl:text-[14px]">
               <Link
                 to={"/create-account"}
-                className="w-auto text-center text-pink-900 text-bold"
+                className="w-full pl-2 text-left text-pink-900 text-bold"
               >
                 Register
               </Link>
               <Link
                 to={"/login"}
-                className="w-auto text-center text-pink-900 text-bold"
+                className="w-full pl-2 text-left text-pink-900 text-bold"
               >
                 Login
               </Link>

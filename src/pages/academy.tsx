@@ -30,8 +30,11 @@ const Academy = () => {
 
   const navigate = useNavigate();
   const navToLogin = () => {
-    navigate({ to : "/login"});
-  }
+    navigate({ to: "/login" });
+  };
+  const navToRegister = () => {
+    navigate({ to: "/register" });
+  };
   return (
     <div className="overflow-hidden">
       <header className="w-full h-auto bg-transparent">
@@ -53,10 +56,16 @@ const Academy = () => {
               transition={{ duration: 0.4, ease: "easeIn" }}
               className="btn w-full h-auto flex items-center justify-center gap-5 lg:w-auto"
             >
-              <button className=" bg-pink-900 py-2.5 items-center justify-center w-40 text-white rounded-md">
+              <button
+                className=" bg-pink-900 py-2.5 items-center justify-center w-40 text-white rounded-md"
+                onClick={navToRegister}
+              >
                 Register Now
               </button>
-              <button className="shadow bg-white flex py-2.5 items-center justify-center w-40 rounded-md">
+              <button
+                className="shadow bg-white flex py-2.5 items-center justify-center w-40 rounded-md"
+                onClick={navToLogin}
+              >
                 Login
               </button>
             </motion.div>
@@ -79,7 +88,10 @@ const Academy = () => {
               <p className="font-semibold text-[18px] lg:text-[14px]">
                 8 weeks bootcamp
               </p>
-              <button className="border-[1.5px] px-5 py-2.5 lg:py-1.5 rounded-md">
+              <button
+                className="border-[1.5px] px-5 py-2.5 lg:py-1.5 rounded-md"
+                onClick={navToRegister}
+              >
                 Get Started
               </button>
             </div>

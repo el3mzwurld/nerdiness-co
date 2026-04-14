@@ -51,3 +51,8 @@ button {
 .box-small {
   box-shadow: 20px 2px 50px rgba(184, 45, 98, 0.211);
 }
+
+.summary {
+  width: 100%;
+  background-color: #bdbdbdbd;
+}

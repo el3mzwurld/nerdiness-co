@@ -27,7 +27,7 @@ const Home = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   const Links = ["About us", "Academy", "Financials", "Projects", "Contact us"];
-  const LinkRoutes = ["/about", "academy", "/*", "/*", "/contact"];
+  const LinkRoutes = ["/about", "/academy", "/*", "/projects", "/contact"];
   const Services = [
     { image: frontEnd, title: "Front-end development Training" },
     { image: backEnd, title: "Backend development Training" },
@@ -262,7 +262,7 @@ export const Links = [
   "Projects",
   "Contact us",
 ];
-export const LinkRoutes = ["/about", "/academy", "/*", "/*", "/contact"];
+export const LinkRoutes = ["/about", "/academy", "/*", "/projects", "/contact"];
 
 interface serviceBodyProps {
   image: string;
@@ -313,7 +313,6 @@ const CtaSection = ({ title, body, image }: CtaSectionProps) => {
     </div>
   );
 };
-
 export const Contact = () => {
   const [formError, setFormError] = useState(false);
   const [email, setEmail] = useState("");
