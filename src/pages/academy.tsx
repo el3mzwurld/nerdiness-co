@@ -114,7 +114,7 @@ const Academy = () => {
                 <div className="actual w-8/10 h-8/10 flex items-center justify-center">
                   <img
                     src={curiousGray}
-                    className="w-9/10 h-9/10 object-cover object-center"
+                    className="w-full h-9/10 object-cover object-center"
                     alt=""
                   />
                 </div>
